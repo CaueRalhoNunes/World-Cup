@@ -1,0 +1,309 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+:root {
+   font-size: 62.5%;
+   font-family: 'Roboto', sans-serif;
+   --header-color: hsl(51, 92%, 62%);
+   --card: hsl(240, 6%, 13%);
+   --border-bottom: hsl(213, 89%, 58%);
+   --text: hsl(240, 9%, 89%);
+   --line: hsl(240, 7%, 21%);
+}
+
+::-webkit-scrollbar-thumb {
+   background: var(--line);
+}
+::-webkit-scrollbar {
+   width: 0.3rem;
+}
+
+body {
+   background: rgba(8, 8, 94, 1) 69%;
+   overflow-x: hidden;
+   display: grid;
+}
+
+header {
+   display: flex;
+   justify-content: center;
+   margin-top: 6rem;
+}
+
+main {
+   display: flex;
+   justify-content: center;
+   align-content: center;
+   width: 100%;
+   margin-top: 3.2rem;
+}
+
+ul {
+   list-style: none;
+}
+
+header p {
+   color: var(--text);
+   font-size: 2.5rem;
+   margin-top: 0;
+   font-family: 'Roboto', sans-serif;
+   text-transform: uppercase;
+   font-weight: 600;
+   text-align: center;
+}
+
+section.container {
+   display: flex;
+   flex-direction: column;
+   position: fixed;
+   justify-self: center;
+   padding-top: 3.2rem;
+   background-color: var(--card);
+   border-bottom: 0.4rem solid var(--header-color);
+   border-radius: 0.8rem;
+   width: 100%;
+   max-width: 32.6rem;
+   height: 50.82rem;
+   visibility: hidden;
+}
+
+section#chooseTheCountry {
+   padding: 0;
+}
+
+section.container header {
+   margin: 0;
+   padding-block: 4%;
+}
+
+section.container header svg {
+   position: relative;
+   left: 39%;
+}
+
+div.teams {
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+   column-gap: 1rem;
+   row-gap: 2.28rem;
+   overflow-x: hidden;
+   margin-bottom: 2.9rem;
+   margin-inline: 1rem;
+}
+
+div.creator {
+   display: flex;
+   position: fixed;
+   justify-self: center;
+   flex-direction: column;
+   align-items: center;
+   padding-top: 3.2rem;
+   background-color: var(--card);
+   border-bottom: 0.1rem solid var(--border-bottom);
+   border-radius: 0.6rem;
+   width: 100%;
+   max-width: 31.6rem;
+   height: 50.82rem;
+   visibility: hidden;
+}
+
+div.creator header {
+   height: 12.6rem;
+}
+
+div.creator header,
+div.card header {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   width: 100%;
+   max-width: 27rem;
+   height: 10.6rem;
+   text-transform: uppercase;
+   font-size: 1.4rem;
+   border: 0.1rem solid var(--border-bottom);
+   border-radius: 0.6rem;
+   margin-top: 0;
+}
+
+input[type='date'],
+p.date {
+   font-family: 'Roboto', sans-serif;
+   display: block;
+   font-weight: 700;
+   width: 100%;
+   max-width: 17.5rem;
+   font-size: 2.4rem;
+   color: var(--header-color);
+   background: none;
+   border: none;
+   outline: none;
+   caret-color: var(--text);
+   padding-block: 0.7rem;
+}
+
+input[type='date']::-webkit-calendar-picker-indicator {
+   filter: invert(1);
+}
+
+input[type='number']::placeholder {
+   color: var(--text);
+}
+
+input[type='time'] {
+   font-weight: 900;
+   font-size: 3.6rem;
+   color: var(--text);
+   background: none;
+   outline: none;
+   border: none;
+   font-family: 'Roboto', sans-serif;
+   text-align: center;
+}
+
+input[type='time']::-webkit-calendar-picker-indicator {
+   display: none;
+}
+
+div.games {
+   display: grid;
+   gap: 4rem;
+   width: 100%;
+   height: 100%;
+   margin-inline: auto;
+   padding-top: 5.3rem;
+   padding-bottom: 3.2rem;
+}
+
+div.games p {
+   font-weight: 900;
+   font-size: 3.6rem;
+   color: var(--text);
+}
+
+div.games div.col-a::after,
+div.games div.col-b::after {
+   content: '';
+   margin: 0;
+   position: relative;
+   width: 27rem;
+   height: 0.2rem;
+   background-color: var(--line);
+   display: block;
+   top: 41%;
+   left: 7%;
+}
+
+div.col-a ul li,
+div.col-b ul li,
+div.col-c ul li {
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr;
+   width: 100%;
+   max-width: 27rem;
+   height: 5rem;
+   justify-items: center;
+   align-items: center;
+   gap: 3.75rem;
+   margin-inline: auto;
+}
+
+div.card {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   padding-top: 3.2rem;
+   background-color: var(--card);
+   border-bottom: 0.1rem solid var(--border-bottom);
+   border-radius: 0.6rem;
+   width: 100%;
+   max-width: 31.6rem;
+   height: 50.82rem;
+   z-index: 1;
+   margin-top: 3rem;
+}
+
+button.create-game {
+   position: relative;
+   left: 27%;
+   background-color: var(--header-color);
+   width: 100%;
+   max-width: 10.3rem;
+   height: 3.5rem;
+   font-family: 'Roboto', sans-serif;
+   font-weight: 700;
+   font-size: 1.7rem;
+   border-radius: 0.5rem;
+   margin-bottom: 1rem;
+   text-transform: uppercase;
+   text-align: center;
+   border: none;
+}
+
+div.buttonsContainer {
+   width: 100%;
+   display: grid;
+   align-items: center;
+   grid-template-columns: 1fr 1fr;
+   padding-right: 3.5rem;
+}
+
+button#edit {
+   display: none;
+}
+
+button.create-game:hover {
+   border-radius: 8rem;
+   transition: 1s;
+}
+
+button#create {
+   width: 6.5rem;
+   height: 6.5rem;
+   border-radius: 7rem;
+   border: none;
+   background-color: var(--card);
+   position: fixed;
+   bottom: 1rem;
+   right: 1rem;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   transition: 450ms;
+   z-index: 2;
+}
+
+button#create:hover {
+   transform: translateY(-25%);
+   transition: 450ms;
+}
+
+button#create:hover > svg path {
+   stroke: var(--header-color);
+}
+
+svg#button path {
+   stroke: var(--text);
+}
+
+button.icon {
+   background: none;
+   border: none;
+}
+
+section#cardContainer {
+   display: grid;
+   justify-items: center;
+   grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+}
+
+div.modifyCardButtons {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   align-items: center;
+   gap: 15.6rem;
+   margin-bottom: 1rem;
+}
