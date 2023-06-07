@@ -44,23 +44,27 @@ function pickCountry(event) {
    const team = event.target;
    const countrySelector = document.getElementById('countrySelector');
    const handleCountryClick = (e) => {
-      const country = e.target.getAttribute('src');
-      team.setAttribute('src', country);
-      e.target.style.display = 'none';
-      creator.style.visibility = 'visible';
-      closeButton();
+      if (e.target.tagName != 'IMG') {
+         closeButton();
+      } else {
+         const country = e.target.getAttribute('src');
+         team.setAttribute('src', country);
+         e.target.style.display = 'none';
+         creator.style.visibility = 'visible';
+         closeButton();
 
-      const handleSecondCountryClick = (event) => {
-         const secondCountry = event.target.getAttribute('src');
-         if (secondCountry !== country) {
-            //Here it gets the selected country and display it again
-            e.target.style.display = 'grid';
-         }
-      };
-      countrySelector.removeEventListener('click', handleCountryClick);
-      countrySelector.addEventListener('click', handleSecondCountryClick, { once: true });
+         const handleSecondCountryClick = (event) => {
+            const secondCountry = event.target.getAttribute('src');
+            if (secondCountry !== country) {
+               //Here it gets the selected country and display it again
+               e.target.style.display = 'grid';
+            }
+         };
+         countrySelector.removeEventListener('click', handleCountryClick);
+         countrySelector.addEventListener('click', handleSecondCountryClick, { once: true });
+      }
    };
-   countrySelector.addEventListener('click', handleCountryClick, { once: true });
+   countrySelector.addEventListener('click', handleCountryClick);
 }
 
 function getDate() {

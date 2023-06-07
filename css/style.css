@@ -304,6 +304,6 @@ div.modifyCardButtons {
    display: grid;
    grid-template-columns: 1fr 1fr;
    align-items: center;
-   gap: 15.6rem;
+   gap: 16.6rem;
    margin-bottom: 1rem;
 }
